@@ -1,6 +1,5 @@
 //Problem 2
 //Link=https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1
-
 //dp using memorization
 
 
@@ -39,6 +38,8 @@ class Solution
     }
    
 }
+
+//This solution passed 1210/1210 test case
 //Learning
 //In java dp using memorization, 
 //Step 1 - we define matrix for changing variables in dp(knapsack) method
