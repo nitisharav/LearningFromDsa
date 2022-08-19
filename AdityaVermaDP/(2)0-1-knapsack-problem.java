@@ -41,6 +41,7 @@ class Solution
 
 //This solution passed 1210/1210 test case
 //Learning
+// Arrays.fill(arr1, -1) , it will fill array with -1;
 //In java dp using memorization, 
 //Step 1 - we define matrix for changing variables in dp(knapsack) method
 //step 2 size of matrix= changing variables+1, so it can include all data of changing variable
