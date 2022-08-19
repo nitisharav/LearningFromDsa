@@ -1,5 +1,6 @@
 //problem 1
 //Link= https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1
+//Recursion technique
 class Solution 
 { 
     //Function to return max value that can be put in knapsack of capacity W.
