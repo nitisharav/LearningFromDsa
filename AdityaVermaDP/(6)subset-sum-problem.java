@@ -40,7 +40,7 @@ class Solution{
     
     
 }
-//This solution passed 1210/1210 test case
+//This solution passed 34/34 test case
 //Learning
 //1. Top down approach remove recursive approach from memorization technique
 //step 1, make matrix of size N+1,Sum+1
