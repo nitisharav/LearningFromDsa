@@ -10,6 +10,11 @@ class Solution{
          boolean[][] t = new boolean[N+1][sum+1];
          for(boolean[] arr1 : t) 
             Arrays.fill(arr1, false);
+       for (int i=0;i<t.length;i++){
+            for(int j=0;j<t[i].length;j++){
+                t[0][j]=true;
+            }
+        }
          return  isSubsetSumRes(N,arr,sum, t);
     }
 
