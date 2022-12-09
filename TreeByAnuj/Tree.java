@@ -1,11 +1,16 @@
 package com.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Tree {
 	
 	static Scanner sc=null;
 	public static void main(String[] args) {
+	
+		
+		
 		sc=new Scanner(System.in);
 		
 		Node root= createTree();
@@ -22,6 +27,19 @@ public class Tree {
 	    System.out.println("maximum: "+ maximum(root));
 	    System.out.println();
 	    System.out.println("minimum: "+ minimum(root));
+	    System.out.println();
+	    
+	    for (int i=1;i<=height(root);i++) {
+	    	printCurrentLevelRec(root, i);
+	    	System.out.println();
+	    }
+	    
+	    System.out.println();
+	    printCurrentLevelQue(root);
+	    System.out.println();
+	    printCurrentLevelQueLine(root);
+	    
+	    
 
 	}
 	
@@ -78,6 +96,45 @@ public class Tree {
 		if (root == null) return Integer.MAX_VALUE;
 		return Math.min(root.data, Math.min(minimum(root.left), minimum(root.right)));
 	}
+	//time complexity us o n square
+	static void printCurrentLevelRec(Node root, int level) {
+		if(root==null) return ;
+		if(level==1) System.out.print(root.data+" ");
+		else if (level>1) {
+			printCurrentLevelRec(root.left, level-1);
+			printCurrentLevelRec(root.right, level-1);
+		}
+		
+	}
+	//O(n)
+	static void printCurrentLevelQue(Node root) {
+		Queue<Node> q=new LinkedList<Node>();
+		q.add(root);
+		while(!q.isEmpty()) {
+			Node curr=q.poll();
+			System.out.print(curr.data+" ");
+			if(curr.left!=null) q.add(root.left);
+			if(curr.right!=null) q.add(curr.right);
+		}
+	}
+	static void printCurrentLevelQueLine(Node root) {
+		Queue<Node> q=new LinkedList<Node>();
+		q.add(root); 
+		q.add(null);
+		while(!q.isEmpty()) {
+			Node curr=q.poll();
+			if(curr==null) {
+				if(q.isEmpty()) return;
+				q.add(null);
+				System.out.println();
+				continue;
+			}
+			System.out.print(curr.data+" ");
+			if(curr.left!=null) q.add(curr.left);
+			if(curr.right!=null) q.add(curr.right);
+		}
+	}
+	
 }
 
 class Node {
