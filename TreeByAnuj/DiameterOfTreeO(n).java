@@ -14,7 +14,7 @@
  * }
  */
 
- //Time complexity O(n)2
+ //Time complexity O(n)
 class Solution {
     int ans=0;
     public int diameterOfBinaryTree(TreeNode root) {
